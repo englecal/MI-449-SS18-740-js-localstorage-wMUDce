@@ -4,23 +4,6 @@ var button = document.getElementById('time')
 // variable that stores the theme from localStorage if it already exist
 var theme = window.localStorage.getItem('theme')
 
-// variable that stores times visited in local localStorage if it already exists
-var visited = parseInt(window.localStorage.getItem('storedVisited'))
-
-// check if visited isNaN
-if (isNaN(visited)) {
-  visited = 0
-}
-
-// if first time visiting the website
-var output = document.getElementById('visited')
-// adds 1 to visit everytime you visit
-visited += 1
-// sets the variable visited to the key storedVisited
-parseInt(window.localStorage.setItem('storedVisited', visited))
-// outputes the variable visited
-output.innerHTML = visited
-
 // if there is no theme stored in localStorage
 if (theme === null) {
   // sets body to day-theme class
@@ -46,3 +29,20 @@ button.addEventListener('click', function () {
     usetheme('day-theme')
   }
 })
+
+// variable that stores times visited in local localStorage if it already exists
+var visited = parseInt(window.localStorage.getItem('storedVisited'))
+
+// check if visited isNaN
+if (isNaN(visited)) {
+  visited = 0
+}
+
+// if first time visiting the website
+var output = document.getElementById('visited')
+// adds 1 to visit everytime you visit
+visited += 1
+// sets the variable visited to the key storedVisited
+parseInt(window.localStorage.setItem('storedVisited', visited))
+// outputes the variable visited
+output.innerHTML = visited
