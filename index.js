@@ -30,18 +30,19 @@ if (theme === null) {
   document.body.setAttribute('class', theme)
 }
 
+function usetheme (theme) {
+  document.body.setAttribute('class', theme)
+  // sets localStorage to night-theme
+  window.localStorage.setItem('theme', theme)
+}
 // gets the theme that is stored in localStorage and switches the theme when clicked
 button.addEventListener('click', function () {
   window.localStorage.getItem('theme')
   if (document.body.getAttribute('class') === 'day-theme') {
     // if body them is day-theme, sets body to class night-theme
-    document.body.setAttribute('class', 'night-theme')
-    // sets localStorage to night-theme
-    window.localStorage.setItem('theme', 'night-theme')
+    usetheme('night-theme')
   } else {
     // if body them is day-theme, sets body to class day-theme
-    document.body.setAttribute('class', 'day-theme')
-    // sets localStorage to day-theme
-    window.localStorage.setItem('theme', 'day-theme')
+    usetheme('day-theme')
   }
 })
